@@ -17,8 +17,8 @@ img {
 }
 
 body {
-  max-width: 1280px;
-  line-height: 1.6;
+  max-width: 1200px;
+  line-height: 1.3;
   margin-inline: auto;
   padding-block: 2rem;
 }
@@ -29,12 +29,25 @@ body {
   display: flex
 }
 
+.flex-col{
+  flex-direction: column;
+}
+.space-btw{
+  justify-content: space-between;
+}
+
+.align-center {
+  align-items: center;
+}
 
 .align-end {
   align-items: flex-end;
 }
 .row-gap-2{
   row-gap:2rem;
+}
+.gap-2{
+  gap:2rem;
 }
 
  .pos-rel {
@@ -102,17 +115,7 @@ body {
   justify-content: space-between;
   /* padding-inline: 2rem; */
 
-  & h1 {
-    font-size: 3rem;
-    width: 40%;
-  }
 
-  & p {
-    align-self: flex-end;
-    width: 40%;
-    text-align: end;
-
-  }
 }
 
 .main {
@@ -122,6 +125,25 @@ body {
   padding: 2rem 5rem 4rem 5rem;
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
+}
+
+.bottomColumn .card:nth-of-type(2){
+ align-self: flex-end;
+}
+
+.bottomColumn {
+  justify-content: space-between;
+
+}
+
+.footer{
+  & path {
+    fill:white;
+
+  }
+  & svg{
+    width:10rem;
+  }
 }
 
 

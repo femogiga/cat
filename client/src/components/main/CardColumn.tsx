@@ -10,21 +10,22 @@ const CardColumn = ({ children }: CardColumnProp) => {
     gap: '2rem',
     flexWrap: 'wrap',
     position: 'relative',
+   
   };
 
   const backCard: React.CSSProperties = {
     position: 'absolute',
-    backgroundColor: '#DEC68B',
+    backgroundColor:'blue' || '#DEC68B',
     width: '46.96px',
     height: '176px',
     bottom: '3rem',
-    left: '1rem',
+    left: '-0rem',
     zIndex: '-3',
     borderRadius: '14rem',
   };
   return (
-    <div className='cardColumn' style={columnStyle}>
-      <div className='' style={backCard}></div>
+    <div className='cardColumn flow-3' style={columnStyle}>
+      <div className='backCard' style={backCard}></div>
       {children}
     </div>
   );

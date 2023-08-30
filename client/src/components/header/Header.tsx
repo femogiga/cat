@@ -2,7 +2,8 @@ type HeaderProps = {
   children: React.ReactNode;
 };
 
-const Header= ({ children }: HeaderProps) => {
+const Header = ({ children }: HeaderProps) => {
+
   return <header>{children}</header>;
 };
 

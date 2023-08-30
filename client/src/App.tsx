@@ -2,7 +2,9 @@ import Card from './components/Card';
 import Form from './components/header/Form';
 import Header from './components/header/Header';
 import Logo from './components/header/Logo';
+import BottomColumn from './components/main/BottomColumn';
 import CardColumn from './components/main/CardColumn';
+import Footer from './components/main/Footer';
 import Main from './components/main/Main';
 import MainHeading from './components/main/MainHeading';
 import Subheading from './components/main/Subheading';
@@ -16,7 +18,7 @@ function App() {
       </Header>
       <Main>
         <Subheading subheading={'Most Search Breeds'} />
-        <MainHeading />
+        <MainHeading heading={' 66+ Breeds For you to discover'} />
         <CardColumn>
           <Card />
           <Card />
@@ -24,6 +26,25 @@ function App() {
           <Card />
         </CardColumn>
       </Main>
+
+      <BottomColumn>
+        <div style={{ alignSelf: 'center' }}>
+          <MainHeading heading={'Why should you have a cat?'} seeMore={false} />
+          <p>
+            SEE MORE <span> &#8594;</span>
+          </p>
+        </div>
+
+        <div className='flex gap-2 ' style={{ width: '55%' }}>
+          <div className='flex flex-col'>
+            <Card width={'17.063rem'} height={'10.438rem'} />
+            <Card width={'12.218rem'} height={'18.328rem'} />
+          </div>
+
+          <Card width={'14.904rem'} height={'24.117rem'} />
+        </div>
+      </BottomColumn>
+      <Footer/>
     </div>
   );
 }

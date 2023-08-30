@@ -2,8 +2,12 @@ import catLogo from '../../cat/CatwikiLogo2.svg';
 import { ReactSVG } from 'react-svg';
 
 const Form = () => {
+   const formStyle: React.CSSProperties = {
+     borderTopLeftRadius: '30px',
+     borderTopRightRadius: '30px',
+   };
   return (
-    <div className='form'>
+    <div className='form' style={formStyle}>
       <figure>
         {/* <CatLogo /> */}
         <ReactSVG src={catLogo} />
