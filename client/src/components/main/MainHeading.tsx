@@ -20,7 +20,7 @@ const MainHeading = ({ heading, seeMore }:MainHeadingProps) => {
 
 
   return (
-    <div className='mainheading flex flow-2' style={{width:'40%'}}>
+    <div className='mainheading flex flow-2' style={{width:'0%'}}>
       <p className='' style={h1style}>
        {heading}
       </p>
