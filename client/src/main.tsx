@@ -4,12 +4,14 @@ import App from './App.tsx';
 import './index.css';
 import CatProvider from './context/CatContext.tsx';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Information from './components/others/Information.tsx';
 
 const Root = () => {
   return (
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<App />} />
+        <Route path='/:id' element={<Information/>} />
       </Routes>
     </BrowserRouter>
   );

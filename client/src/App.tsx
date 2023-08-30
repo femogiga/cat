@@ -14,7 +14,8 @@ import thirdImage from './cat/image 3.png';
 import CatProvider, { CatContext } from './context/CatContext';
 import { useContext } from 'react';
 import { CatContextType } from './typescontainer/types';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import Information from './components/others/Information';
 
 function App() {
   const { data, setData } = useContext(CatContext) as CatContextType;
@@ -35,8 +36,8 @@ function App() {
             <Card />
             <Card /> */}
           {mapped.map((cat) => (
-            <Link to={'https://edition.cnn.com/'}>
-              <Card key={cat.id} src={cat.image.url} breed={cat.name} />
+            <Link to={`/${cat.id}`}>
+              <Card key={cat.id} src={cat.image.url} breed={cat.name}  />
             </Link>
           ))}
         </CardColumn>
@@ -55,17 +56,15 @@ function App() {
 
         <div className='flex gap-2 ' style={{ width: '55%' }}>
           <div className='flex flex-col'>
-            <Card src={firstImage} width={'17.063rem'} height={'10.438rem'} />{' '}
+            <Card src={firstImage} width={'17.063rem'} height={'10.438rem'} />
             <Card src={secondImage} width={'12.218rem'} height={'18.328rem'} />
           </div>
 
           <Card src={thirdImage} width={'14.904rem'} height={'24.117rem'} />
         </div>
       </BottomColumn>
-      <Footer />
-      {/* </CatProvider> */}
+      <Information/>
     </div>
   );
 }
-
 export default App;

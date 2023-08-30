@@ -8,13 +8,14 @@ type CardProp = {
 
 const Card = ({ aspect, breed, height, width, src }: CardProp) => {
   //aspect = 1/2
- 
+
   const cardStyle: React.CSSProperties = {
     width: width || '13.75rem',
     // aspectRatio: aspect  || '1/1',
     height: height || '13.75rem',
     objectFit: 'cover',
     borderRadius: '24px',
+
     // zIndex: '3',
     // minWidth:'192.95px'
   };
