@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import Card from '../Card';
 import Logo from '../header/Logo';
 import Subheading from '../main/Subheading';
@@ -6,8 +6,9 @@ import Stat from './Stat';
 import { CatContext } from '../../context/CatContext';
 import { useParams } from 'react-router-dom';
 import Footer from '../main/Footer';
-import CardColumn from '../main/CardColumn';
-import BottomColumn from '../main/BottomColumn';
+import { PhotoContextType } from '../../typescontainer/types';
+import { PhotoContext } from '../../context/PhotoContext';
+import {fetchData} from '../../../utility/apiService.ts'
 
 type InformationProp = {
   breed: string;
@@ -22,6 +23,9 @@ const Information = ({
   life_span,
   description,
 }: InformationProp) => {
+  //
+  const [photos, setPhotos] = useState([]);
+  //  const { photos,setPhotoId,photoId} = useContext(PhotoContext) as PhotoContextType;
   const params = useParams();
   const id = params.id;
   const { data } = useContext(CatContext);
@@ -29,7 +33,17 @@ const Information = ({
 
   const displayedCat = currentCat[0];
   console.log('displayed', displayedCat);
+  // const mappedPhotos = photos.slice(0, 8);
 
+  //  useEffect(() => {
+  //    setPhotoId(id);
+  //  }, [photoId]);
+  useEffect(() => {
+     const url = `https://api.thecatapi.com/v1/images/search?limit=8&breed_ids=${id}&api_key=`;
+     const mappedPhotos = fetchData(url, setPhotos);
+  },[])
+
+  ////
   return (
     <div className='information flex flex-col'>
       <Logo />
@@ -75,18 +89,21 @@ const Information = ({
       </div>
       <div className='flow-6'>
         <Subheading subheading='Other photo' />
-        <div className = 'flex gap-2 flex-wrap space-btw align-center'>
+        <div className='flex gap-2 flex-wrap space-btw align-center'>
+          {/* <Card />
           <Card />
           <Card />
           <Card />
           <Card />
           <Card />
-          <Card />
-          <Card />
-          <Card />
+          <Card /> */}
+
+          {photos.map((picture, index) => (
+            <Card key={index} src={picture?.url} />
+          ))}
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 };

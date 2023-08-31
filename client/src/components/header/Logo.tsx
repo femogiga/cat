@@ -1,13 +1,14 @@
-import  catLogo from '../../cat/CatwikiLogo.svg'
+import { Link } from 'react-router-dom';
+import catLogo from '../../cat/CatwikiLogo.svg';
 
 const Logo = () => {
-    return (
-        <div className='logo flow-1'>
-            <img src={ catLogo} alt="logo" />
-        </div>
-    )
-}
+  return (
+    <Link to='/'>
+      <div className='logo flow-1'>
+        <img src={catLogo} alt='logo' />
+      </div>
+    </Link>
+  );
+};
 
-
-
-export default Logo
+export default Logo;

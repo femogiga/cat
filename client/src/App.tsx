@@ -11,14 +11,16 @@ import Subheading from './components/main/Subheading';
 import firstImage from './cat/image 1.png';
 import secondImage from './cat/image 2.png';
 import thirdImage from './cat/image 3.png';
-import CatProvider, { CatContext } from './context/CatContext';
+import  { CatContext } from './context/CatContext';
 import { useContext } from 'react';
-import { CatContextType } from './typescontainer/types';
+import { CatContextType, PhotoContextType } from './typescontainer/types';
 import { Link } from 'react-router-dom';
-import Information from './components/others/Information';
+
+import { PhotoContext } from './context/PhotoContext';
 
 function App() {
   const { data, setData } = useContext(CatContext) as CatContextType;
+  //  const{photos} = useContext(PhotoContext) as PhotoContextType
   const mapped = data.slice(0, 4);
   console.log('all data', mapped);
   return (

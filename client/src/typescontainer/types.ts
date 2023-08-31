@@ -3,11 +3,11 @@ interface IWeight {
     metric: string
 }
 
-interface IImage{
-    id:string
-    width:number
-    height:number
-    url:string
+interface IImage {
+    id: string
+    width: number
+    height: number
+    url: string
 }
 interface CatType {
     adaptability: number
@@ -24,7 +24,7 @@ interface CatType {
     grooming: number
     hairless: number
     id: string
-    image:IImage
+    image: IImage
     indoor: number
     intelligence: number
     lap: number
@@ -47,16 +47,22 @@ interface CatType {
     weight: IWeight
     wikipedia_url: string
 }
-// export type CatType = {
-//     id: string,
-//     url: string,
-//     width: number,
-//     height: number,
-//     breeds: IBreed[]
-// }
-
-
+export type PhotoType = {
+    id: string
+    url: string
+    width: number
+    height: number
+    breeds: IImage[]
+}
 export type CatContextType = {
     data: CatType[]
-     setData: (data: CatType[]) => void
+    setData: (data: CatType[]) => void
+}
+
+
+export type PhotoContextType = {
+    photos: PhotoType[]
+     photoId:string
+    setPhotos: (photos: PhotoType[]) => void
+     setPhotoId:(id:string)=>void
 }

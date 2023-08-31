@@ -9,8 +9,7 @@ export const CatContext = createContext<CatContextType | null>(null);
 
 const CatProvider = ({ children }: CatProviderProps) => {
   const [data, setData] = useState<CatType[]>([]);
-
-  const apikey =
+const apikey =
     'live_iMUqJb7gjlT4vDMVIcb6qmUevcFeh246fAHXU0ijTVLgaXk1l4Eas68c9jsoaDhL';
   useEffect(() => {
     const fetchData = async () => {
@@ -24,6 +23,7 @@ const CatProvider = ({ children }: CatProviderProps) => {
     };
 
     fetchData();
+
   }, []);
   console.log(data);
   return (
