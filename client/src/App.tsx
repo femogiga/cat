@@ -36,7 +36,7 @@ function App() {
             <Card />
             <Card /> */}
           {mapped.map((cat) => (
-            <Link to={`/${cat.id}`}>
+            <Link key={cat.id} to={`/${cat.id}`}>
               <Card key={cat.id} src={cat.image.url} breed={cat.name}  />
             </Link>
           ))}

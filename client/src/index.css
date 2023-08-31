@@ -55,6 +55,10 @@ a{
   gap:2rem;
 }
 
+.gap-4 {
+  gap: 4rem;
+}
+
  .pos-rel {
   position: relative;
 }
