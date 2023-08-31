@@ -6,6 +6,8 @@ import Stat from './Stat';
 import { CatContext } from '../../context/CatContext';
 import { useParams } from 'react-router-dom';
 import Footer from '../main/Footer';
+import CardColumn from '../main/CardColumn';
+import BottomColumn from '../main/BottomColumn';
 
 type InformationProp = {
   breed: string;
@@ -29,21 +31,23 @@ const Information = ({
   console.log('displayed', displayedCat);
 
   return (
-    <div className='information'>
+    <div className='information flex flex-col'>
       <Logo />
       <div className='flex gap-4'>
         <Card src={displayedCat?.image?.url} />
-        <article style={{ width: '60%' }}>
+        <article className='flow-3' style={{ width: '60%' }}>
           <Subheading subheading={displayedCat?.name} />
           <p className='flow-2'>{displayedCat?.description}</p>
-          <p>
+          <p className='flow-1'>
             <span>Temperament: </span> {displayedCat?.temperament}
           </p>
-          <p>
-            <span>Origin: </span> {displayedCat?.origin}-
+          <p className='flow-1'>
+            <span>Origin: </span> {displayedCat?.origin}
           </p>
-          <p>
-            <span>Life Span: </span> {displayedCat?.life_span}-
+          <p className='flow-1'>
+            <span>Life Span: </span>
+            {displayedCat?.life_span}
+            <span> years</span>
           </p>
           <div className='flex flex-col gap-2'>
             <Stat statTitle='Adaptability' stat={displayedCat?.adaptability} />
@@ -62,10 +66,27 @@ const Information = ({
               stat={displayedCat?.health_issues}
             />
             <Stat statTitle='Social needs' stat={displayedCat?.social_needs} />
-            <Stat statTitle='Stranger friendly' stat={displayedCat?.stranger_friendly} />
+            <Stat
+              statTitle='Stranger friendly'
+              stat={displayedCat?.stranger_friendly}
+            />
           </div>
         </article>
       </div>
+      <div className='flow-6'>
+        <Subheading subheading='Other photo' />
+        <div className = 'flex gap-2 flex-wrap space-btw align-center'>
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+        </div>
+      </div>
+      <Footer/>
     </div>
   );
 };

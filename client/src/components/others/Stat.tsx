@@ -18,9 +18,9 @@ const Stat = ({ statTitle, stat }) => {
   arr.fill(bar)
 
   return (
-    <div className='stat flex gap-2'>
-      <p style={{ marginRight: '0rem',width:'50%' }}>{statTitle}</p>
-      <div style={{ width: '60%',display:'flex',gap:'2rem' }}>
+    <div className='stat flex gap1 align-center'>
+      <p style={{ marginRight: '0rem',width:'30%' }}>{statTitle}</p>
+      <div style={{ width: '100%',display:'flex',gap:'1rem' }}>
         {/* <div style={barStyle}></div> */}
         {arr.map((item, index) => index < stat ? bar : barBlue)}
       </div>

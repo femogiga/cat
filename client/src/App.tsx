@@ -37,7 +37,7 @@ function App() {
             <Card /> */}
           {mapped.map((cat) => (
             <Link key={cat.id} to={`/${cat.id}`}>
-              <Card key={cat.id} src={cat.image.url} breed={cat.name}  />
+              <Card key={cat.id} src={cat.image.url} breed={cat.name} />
             </Link>
           ))}
         </CardColumn>
@@ -63,7 +63,8 @@ function App() {
           <Card src={thirdImage} width={'14.904rem'} height={'24.117rem'} />
         </div>
       </BottomColumn>
-      <Information/>
+      {/* <Information/> */}
+      <Footer />
     </div>
   );
 }
