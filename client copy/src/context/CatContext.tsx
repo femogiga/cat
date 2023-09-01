@@ -13,13 +13,11 @@ const apikey =
     'live_iMUqJb7gjlT4vDMVIcb6qmUevcFeh246fAHXU0ijTVLgaXk1l4Eas68c9jsoaDhL';
   useEffect(() => {
     const fetchData = async () => {
-      // const response = await fetch(
-      //   `https://api.thecatapi.com/v1/breeds?api_key=${apikey}`
-      // );
-
-      const response = await fetch(`http://localhost:9000/cats/topten`);
+      const response = await fetch(
+        `https://api.thecatapi.com/v1/breeds?api_key=${apikey}`
+      );
       const result = await response.json();
-      setData(result.data);
+      setData(result);
 
       return result;
     };
@@ -34,7 +32,5 @@ const apikey =
     </CatContext.Provider>
   );
 };
-
-
 
 export default CatProvider;
