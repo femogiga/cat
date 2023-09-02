@@ -6,9 +6,7 @@ import Stat from './Stat';
 import { CatContext } from '../../context/CatContext';
 import { useParams } from 'react-router-dom';
 import Footer from '../main/Footer';
-import { PhotoContextType } from '../../typescontainer/types';
-import { PhotoContext } from '../../context/PhotoContext';
-import {fetchData} from '../../../utility/apiService.ts'
+import { fetchData } from '../../../utility/apiService.ts';
 
 type InformationProp = {
   breed: string;
@@ -33,15 +31,15 @@ const Information = ({
 
   const displayedCat = currentCat[0];
   console.log('displayed', displayedCat);
-  // const mappedPhotos = photos.slice(0, 8);
+  //const mappedPhotos = photos.slice(0, 8);
 
   //  useEffect(() => {
   //    setPhotoId(id);
   //  }, [photoId]);
   useEffect(() => {
-     const url = `https://api.thecatapi.com/v1/images/search?limit=8&breed_ids=${id}&api_key=`;
-     const mappedPhotos = fetchData(url, setPhotos);
-  },[])
+    const url = `https://api.thecatapi.com/v1/images/search?limit=8&breed_ids=${id}&api_key=`;
+    const mappedPhotos = fetchData(url, setPhotos);
+  }, []);
 
   ////
   return (

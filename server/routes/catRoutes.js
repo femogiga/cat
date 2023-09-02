@@ -1,5 +1,5 @@
 const express = require('express')
-const  searchCat  = require('../controllers/cat')
+const  searchCat  = require('../controllers/catController')
 const router = express.Router()
 
 

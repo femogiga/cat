@@ -55,8 +55,10 @@ export type PhotoType = {
     breeds: IImage[]
 }
 export type CatContextType = {
-    data: CatType[]
-    setData: (data: CatType[]) => void
+    data?: CatType[]
+    topTenData?: CatType[]
+    setData?: (data: CatType[]) => void
+    setTopTenData?: (data: CatType[]) => void
 }
 
 

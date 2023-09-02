@@ -11,21 +11,21 @@ import Subheading from './components/main/Subheading';
 import firstImage from './cat/image 1.png';
 import secondImage from './cat/image 2.png';
 import thirdImage from './cat/image 3.png';
-import  { CatContext } from './context/CatContext';
+import { CatContext } from './context/CatContext';
 import { useContext } from 'react';
 import { CatContextType, PhotoContextType } from './typescontainer/types';
 import { Link } from 'react-router-dom';
 
-import { PhotoContext } from './context/PhotoContext';
+
 
 function App() {
   const { data, setData } = useContext(CatContext) as CatContextType;
-  //  const{photos} = useContext(PhotoContext) as PhotoContextType
-  const mapped = data.slice(0, 4);
+
+  const mapped = data?.slice(0, 4);
   console.log('all data', mapped);
   return (
     <div>
-      {/* <CatProvider> */}
+
       <Header>
         <Logo />
         <Form />
@@ -37,7 +37,7 @@ function App() {
           {/* <Card />
             <Card />
             <Card /> */}
-          {mapped.map((cat) => (
+          {mapped?.map((cat) => (
             <Link key={cat.id} to={`/${cat.id}`}>
               <Card key={cat.id} src={cat.image.url} breed={cat.name} />
             </Link>

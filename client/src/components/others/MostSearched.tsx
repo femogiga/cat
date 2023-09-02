@@ -1,9 +1,14 @@
+import { useContext } from 'react';
+import { CatContext } from '../../context/CatContext';
 import Card from '../Card';
 import MostSearchedCard from '../MostSearchedCard';
 import Logo from '../header/Logo';
 import Subheading from '../main/Subheading';
+import { CatContextType } from '../../typescontainer/types';
+import { Link } from 'react-router-dom';
 
 const MostSearched = () => {
+  const { data, setData } = useContext(CatContext) as CatContextType;
 
   return (
     <div className='mostsearched '>
@@ -28,6 +33,7 @@ const MostSearched = () => {
             </p>
           </div>
         </article> */}
+        {/* <MostSearchedCard description={''} src={''} breed={''} />
         <MostSearchedCard description={''} src={''} breed={''} />
         <MostSearchedCard description={''} src={''} breed={''} />
         <MostSearchedCard description={''} src={''} breed={''} />
@@ -37,9 +43,17 @@ const MostSearched = () => {
         <MostSearchedCard description={''} src={''} breed={''} />
         <MostSearchedCard description={''} src={''} breed={''} />
         <MostSearchedCard description={''} src={''} breed={''} />
-        <MostSearchedCard description={''} src={''} breed={''} />
-        <MostSearchedCard description={''} src={''} breed={''} />
-        <MostSearchedCard description={''} src={''} breed={''} />
+        <MostSearchedCard description={''} src={''} breed={''} /> */}
+        {data.map((item) => (
+          <Link to={`/${item.id}`} >
+            <MostSearchedCard
+              key={item.id}
+              description={item.description}
+              src={item?.image?.url}
+              breed={item.name}
+            />
+          </Link>
+        ))}
       </div>
     </div>
   );
