@@ -3,6 +3,6 @@ const  searchCat  = require('../controllers/catController')
 const router = express.Router()
 
 
-router.post('/find', searchCat.searchCat)
+router.post('/', searchCat.searchCat)
 router.get('/topten',searchCat.topten)
 module.exports = router

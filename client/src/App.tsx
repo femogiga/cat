@@ -12,7 +12,7 @@ import firstImage from './cat/image 1.png';
 import secondImage from './cat/image 2.png';
 import thirdImage from './cat/image 3.png';
 import { CatContext } from './context/CatContext';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { CatContextType, PhotoContextType } from './typescontainer/types';
 import { Link } from 'react-router-dom';
 
@@ -20,15 +20,19 @@ import { Link } from 'react-router-dom';
 
 function App() {
   const { data, setData } = useContext(CatContext) as CatContextType;
+  const [selectedOption, setSelectedOption] = useState(null);
 
+  
   const mapped = data?.slice(0, 4);
   console.log('all data', mapped);
   return (
     <div>
-
       <Header>
         <Logo />
-        <Form />
+        <Form
+          selectedOption={selectedOption}
+          setSelectedOption={setSelectedOption}
+        />
       </Header>
       <Main>
         <Subheading subheading={'Most Search Breeds'} />

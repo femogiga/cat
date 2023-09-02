@@ -53,7 +53,7 @@ const topten = async (req, res) => {
 
 };
 const searchCat = async (req, res) => { // Removed extra parentheses here
-    const { searchWord, name } = req.body;
+    const { searchword, name } = req.body;
     try {
 
         const search = await prisma.search.create({
@@ -99,5 +99,11 @@ async function getToptenfromApi() {
     }
 
 }
+
+
+
+
+
+
 // getToptenfromApi()
 module.exports = { topten, searchCat };
