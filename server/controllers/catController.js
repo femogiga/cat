@@ -20,7 +20,7 @@ const topten = async (req, res) => {
                     searchword: 'desc', // 'asc' for ascending order, 'desc' for descending order
                 },
             },
-            // take: 10,
+             take: 10,
 
 
 

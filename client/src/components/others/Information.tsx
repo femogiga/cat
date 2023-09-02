@@ -37,6 +37,7 @@ const Information = ({
   //    setPhotoId(id);
   //  }, [photoId]);
   useEffect(() => {
+    // const url = `https://api.thecatapi.com/v1/images/search?limit=8&breed_ids=${id}&api_key=`;
     const url = `https://api.thecatapi.com/v1/images/search?limit=8&breed_ids=${id}&api_key=`;
     const mappedPhotos = fetchData(url, setPhotos);
   }, []);
